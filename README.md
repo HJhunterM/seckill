@@ -4,8 +4,8 @@
 
 此外，需要提前预热Redis：
 
-# 比如，设置商品1的库存为100
+比如，设置商品1的库存为100
 docker exec seckill-redis redis-cli SET "SK:Stock:1" 100
 
-# 验证
+验证
 docker exec seckill-redis redis-cli GET "SK:Stock:1"
