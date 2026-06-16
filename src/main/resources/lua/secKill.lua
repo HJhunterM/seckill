@@ -5,7 +5,7 @@
 -- KEYS[5]: 秒杀记录(PreSecKillRecord的JSON)
 
 -- 构造RedisKey
-local keyLimit = "SK:Limit" .. KEYS[2]
+local keyLimit = "SK:Limit:" .. KEYS[2]
 local keyUserGoodsSecNum = "SK:UserGoodsSecNum:" .. KEYS[1] .. ":" .. KEYS[2]
 local keyUserSecKilledNum = "SK:UserSecKilledNum:" .. KEYS[1] .. ":" .. KEYS[2]
 
