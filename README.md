@@ -9,10 +9,14 @@
 
 此外，需要提前预热Redis：
 
-比如，设置商品1的库存为100
+1、设置商品1的库存为100
 
 docker exec seckill-redis redis-cli SET "SK:Stock:1" 100
 
-验证
+2、设置商品1的每人限购数量为2
+docker exec seckill-redis redis-cli SET "SK:Limit:1" 2
 
+（验证）
 docker exec seckill-redis redis-cli GET "SK:Stock:1"
+
+docker exec seckill-redis redis-cli GET "SK:Limit:1"
