@@ -20,3 +20,15 @@ docker exec seckill-redis redis-cli SET "SK:Limit:1" 2
 docker exec seckill-redis redis-cli GET "SK:Stock:1"
 
 docker exec seckill-redis redis-cli GET "SK:Limit:1"
+
+
+查看Kafka消息：
+
+看最新5条消息：
+docker exec seckill-kafka kafka-console-consumer --bootstrap-server localhost:9092 --topic tp-seckill --from-beginning --max-messages 5
+
+看消费组状态：
+docker exec seckill-kafka kafka-consumer-groups --bootstrap-server localhost:9092 --describe --group TEST_GROUP
+
+持续监听新消息：
+docker exec seckill-kafka kafka-console-consumer --bootstrap-server localhost:9092 --topic tp-seckill

@@ -8,6 +8,7 @@
 local keyLimit = "SK:Limit:" .. KEYS[2]
 local keyUserGoodsSecNum = "SK:UserGoodsSecNum:" .. KEYS[1] .. ":" .. KEYS[2]
 local keyUserSecKilledNum = "SK:UserSecKilledNum:" .. KEYS[1] .. ":" .. KEYS[2]
+local secNo = "SecNo:" .. KEYS[4]
 
 local retAry = {0, ""}
 
@@ -39,5 +40,5 @@ end
 redis.call('decrby', stockKey, KEYS[3])
 redis.call('incrby', keyUserSecKilledNum, KEYS[3])
 redis.call('set', keyUserGoodsSecNum, KEYS[4])
-redis.call('set', KEYS[4], KEYS[5])
+redis.call('set', secNo, KEYS[5])
 return retAry
