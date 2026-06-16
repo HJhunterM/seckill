@@ -29,7 +29,6 @@ public class SecKillConsumer {
             Object msg = message.get();
             System.out.println("收到Kafka消息! Topic:" + topic + ",Message:" + msg);
             try {
-                // 这里写你对接收到的消息的处理逻辑
                 // 手动ACK
                 Gson gson = new Gson();
                 SecKillServiceImpl.SecKillMsg skMsg = new SecKillServiceImpl.SecKillMsg();
